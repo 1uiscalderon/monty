@@ -21,6 +21,7 @@ void (*getfunction(char *s))(stack_t **stack, unsigned int line_number)
 		{"nop", nop},
 		{"sub", sub},
 		{"div", divi},
+		{"mult", mult},
 		{"mod", modu},
 		{NULL, NULL}};
 
