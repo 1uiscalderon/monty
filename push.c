@@ -9,7 +9,7 @@ void push(stack_t **stack, char *valor)
 	stack_t *new;
 	int num;
 
-	if (valor == NULL || _isdigit(valor))
+	if (valor == NULL || _isdigit(valor) == 0)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", global.line_number);
 		free_all(global.stack);
