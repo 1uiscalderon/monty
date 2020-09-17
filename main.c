@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 		global.line = line;
 		op_command = strtok(line, " \t\n");
 		global.line_number++;
-		if (op_command == NULL)
+		if (op_command == NULL || op_command[0] == '#')
 			continue;
 		if (strcmp(op_command, "push") == 0)
 		{
