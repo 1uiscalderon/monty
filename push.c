@@ -34,6 +34,7 @@ void push(stack_t **stack, char *valor)
 		(*stack)->prev = new;
 		*stack = new;
 	}
+	global.stack = *stack;
 }
 
 /**
