@@ -20,6 +20,7 @@ void (*getfunction(char *s))(stack_t **stack, unsigned int line_number)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"div", divi},
 		{NULL, NULL}};
 
 	while (operations[i].opcode != NULL)
