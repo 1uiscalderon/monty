@@ -10,7 +10,11 @@ int _isdigit(char *number)
 	int i = 0;
 
 	if (number[0] == '-')
+	{
 		i = 1;
+		if (number[i] == '\0')
+			return (0);
+	}
 	for (; number[i] != '\0'; i++)
 	{
 		if (number[i] < '0' && number[i] > '9')
