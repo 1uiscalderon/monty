@@ -26,7 +26,7 @@ int _isdigit(char *number)
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	/*stack_t *tmp;*/
+	stack_t *tmp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
@@ -35,9 +35,12 @@ void add(stack_t **stack, unsigned int line_number)
 		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
-	/*tmp = *stack;*/
+	tmp = *stack;
 	(*stack)->next->n = (*stack)->n + (*stack)->next->n;
-	pop(stack, line_number);
+	(*stack)->next->prev = NULL;
+	*stack = (*stack)->next;
+	free(tmp);
+	/*pop(stack, line_number);*/
 }
 
 /**
