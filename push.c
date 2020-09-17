@@ -9,7 +9,7 @@ void push(stack_t **stack, char *valor)
 	stack_t *new;
 	int num;
 
-	if (_isdigit(valor) == 0 || valor == NULL)
+	if (valor == NULL || _isdigit(valor))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", global.line_number);
 		free_all(global.stack);
@@ -69,7 +69,7 @@ void pint(stack_t **stack, unsigned int line_number)
 
 	if (tmp == NULL)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 		free_all(global.stack);
 		fclose(global.file);
 		exit(EXIT_FAILURE);
@@ -89,7 +89,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", global.line_number);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", global.line_number);
 		free_all(global.stack);
 		fclose(global.file);
 		exit(EXIT_FAILURE);

@@ -30,11 +30,14 @@ int main(int argc, char *argv[])
 
 	while ((read = getline(&line, &size, global.file)) != -1)
 	{
-		global.line = line, op_command = strtok(line, " \t\n"), global.line_number++;
+		global.line = line;
+		op_command = strtok(line, " \t\n");
+		global.line_number++;
 		if (op_command == NULL)
 			continue;
 		if (strcmp(op_command, "push") == 0)
-			valor = strtok(NULL, " \t\n"), push(&stack, valor);
+			valor = strtok(NULL, " \t\n");
+			push(&stack, valor);
 		if (strcmp(op_command, "push") != 0)
 			getfunction(op_command)(&stack, global.line_number);
 	}
