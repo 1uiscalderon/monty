@@ -28,6 +28,6 @@ void (*getfunction(char *s))(stack_t **stack, unsigned int line_number)
 		i++;
 	}
 	fprintf(stderr, "L%u%s%s\n", global.line_number, msg, s);
-	/*Frees*/
+	free_all(global.stack);
 	exit(EXIT_FAILURE);
 }

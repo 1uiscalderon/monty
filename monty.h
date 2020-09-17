@@ -46,6 +46,7 @@ typedef struct global_s
 	FILE *file;
 	unsigned int line_number;
 	char *line;
+	stack_t *stack;
 } global_t;
 extern global_t global;
 global_t global;

@@ -12,7 +12,7 @@ void push(stack_t **stack, char *valor)
 	if (_isdigit(valor) == 0 || valor == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", global.line_number);
-		free_all(stack);
+		free_all(global.stack);
 		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
@@ -21,7 +21,7 @@ void push(stack_t **stack, char *valor)
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		free_all(stack);
+		free_all(global.stack);
 		exit(EXIT_FAILURE);
 	}
 	new->n = num;
@@ -68,7 +68,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	if (tmp == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		free_all(stack);
+		free_all(global.stack);
 		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
@@ -88,7 +88,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", global.line_number);
-		free_all(stack);
+		free_all(global.stack);
 		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
@@ -111,7 +111,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
-		free_all(stack);
+		free_all(global.stack);
 		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
