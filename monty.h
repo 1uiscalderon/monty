@@ -48,7 +48,6 @@ typedef struct global_s
 	char *line;
 	stack_t *stack;
 } global_t;
-extern global_t global;
 global_t global;
 
 void (*getfunction(char *s))(stack_t **stack, unsigned int line_number);

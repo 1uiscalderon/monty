@@ -58,7 +58,6 @@ void nop(stack_t **stack, unsigned int line_number)
 void free_all(stack_t *stack)
 {
 	stack_t *tmp;
-
 	tmp = stack;
 	while (tmp != NULL)
 	{

@@ -29,5 +29,6 @@ void (*getfunction(char *s))(stack_t **stack, unsigned int line_number)
 	}
 	fprintf(stderr, "L%u%s%s\n", global.line_number, msg, s);
 	free_all(global.stack);
+	fclose(global.file);
 	exit(EXIT_FAILURE);
 }
