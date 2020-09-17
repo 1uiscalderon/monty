@@ -26,21 +26,17 @@ int _isdigit(char *number)
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp;
+	/*stack_t *tmp;*/
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		free_all(global.stack);
 		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
-	tmp = *stack;
 	(*stack)->next->n = (*stack)->n + (*stack)->next->n;
-	(*stack)->next->prev = NULL;
-	*stack = (*stack)->next;
-	free(tmp);
-	/*pop(stack, line_number);*/
+	pop(stack, line_number);
 }
 
 /**
