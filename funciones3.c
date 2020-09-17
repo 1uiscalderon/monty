@@ -26,7 +26,7 @@ void divi(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * modu - Multyplies the top two elements of the stack.
+ * mult- Multyplies the top two elements of the stack.
  * @stack: Pointer to the stack
  * @line_number: Line number from monty file, print the error in line.
  */
