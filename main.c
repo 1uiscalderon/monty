@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 		if (op_command == NULL)
 			continue;
 		if (strcmp(op_command, "push") == 0)
-			valor = strtok(NULL, " \t"), push(&stack, valor);
+			valor = strtok(NULL, " \t\n"), push(&stack, valor);
 		if (strcmp(op_command, "push") != 0)
 			getfunction(op_command)(&stack, global.line_number);
 	}

@@ -11,7 +11,7 @@ void push(stack_t **stack, char *valor)
 
 	if (_isdigit(valor) == 0 || valor == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", global.line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", global.line_number);
 		free_all(global.stack);
 		fclose(global.file);
 		exit(EXIT_FAILURE);
@@ -22,6 +22,7 @@ void push(stack_t **stack, char *valor)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		free_all(global.stack);
+		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
 	new->n = num;
