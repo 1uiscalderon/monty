@@ -40,6 +40,7 @@ typedef struct instruction_s
  * @file: File descriptor
  * @line_number: Line number from monty file, print the error in line.
  * @line: Memory allocated with the geline
+ * @stack: Structure with nodes "stack"
  */
 typedef struct global_s
 {
