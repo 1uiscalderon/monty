@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 	char *line = NULL, *valor = NULL, *op_command = NULL;
 	stack_t *stack = NULL;
 
-	
 	global.line_number = 0;
 
 	if (argc != 2)
