@@ -67,3 +67,31 @@ void modu(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n = (*stack)->next->n % (*stack)->n;
 	pop(stack, line_number);
 }
+
+/**
+ * pchar - Prints the char at the top of the stack, followed by a new line.
+ * @stack: Pointer to the stack
+ * @line_number: Line number from monty file, print the error in line.
+ */
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	int char_to_p;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		free_all(global.stack);
+		fclose(global.file);
+		exit(EXIT_FAILURE);
+	}
+	char_to_p = (*stack)->n;
+	if (char_to_p < 0 || char_to_p > 127)
+	{
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		free_all(global.stack);
+		fclose(global.file);
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->next->n = (*stack)->next->n % (*stack)->n;
+	pop(stack, line_number);
+}
