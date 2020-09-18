@@ -95,3 +95,33 @@ void pchar(stack_t **stack, unsigned int line_number)
 	putchar(char_to_p);
 	putchar('\n');
 }
+
+/**
+ * pstr - Prints the string starting at the top of the stack,
+ * followed by a new line.
+ * @stack: Pointer to the stack
+ * @line_number: Line number from monty file, print the error in line.
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	int char_to_p;
+	stack_t *tmp;
+
+	(void)line_number;
+	tmp = *stack;
+	if (*stack == NULL)
+	{
+		putchar('\n');
+		return;
+	}
+	while (tmp != NULL)
+	{
+		char_to_p = tmp->n;
+		if (char_to_p <= 0 || char_to_p > 127)
+			break;
+		putchar(char_to_p);
+		tmp = tmp->next;
+	}
+	putchar('\n');
+}
+
