@@ -77,7 +77,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 {
 	int char_to_p;
 
-	if (*stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
 		free_all(global.stack);
