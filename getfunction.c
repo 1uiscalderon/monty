@@ -23,8 +23,9 @@ void (*getfunction(char *s))(stack_t **stack, unsigned int line_number)
 		{"div", divi},
 		{"mul", mult},
 		{"mod", modu},
-		{"pchar"}, pchar},
-		{NULL, NULL}};
+		{"pchar", pchar},
+		{NULL, NULL}
+		};
 
 	while (operations[i].opcode != NULL)
 	{
