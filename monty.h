@@ -63,6 +63,7 @@ void sub(stack_t **stack, unsigned int line_number);
 void divi(stack_t **stack, unsigned int line_number);
 void mult(stack_t **stack, unsigned int line_number);
 void modu(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
 
 int _isdigit(char *number);
 void free_all(stack_t *stack);

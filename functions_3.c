@@ -92,6 +92,6 @@ void pchar(stack_t **stack, unsigned int line_number)
 		fclose(global.file);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->n = (*stack)->next->n % (*stack)->n;
-	pop(stack, line_number);
+	putchar(char_to_p);
+	putchar('\n');
 }
